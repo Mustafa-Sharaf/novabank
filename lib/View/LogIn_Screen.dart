@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
               Column(
-                children: const [
+                children: [
                   Icon(
                     Icons.check_circle,
                     color: Colors.white,
@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "NovaBank",
+                    "NovaBank".tr,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 26,
@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    "Welcome Back",
+                    "WelcomeBack".tr,
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 16,
@@ -70,14 +70,14 @@ class LoginScreen extends StatelessWidget {
                       children: [
                         SizedBox(height: 20,),
                         Buildtextfield(
-                          label: "Email",
+                          label: "Email".tr,
                           icon: Icons.email,
                           controller: controller.emailController,
                           keyboardType: TextInputType.text,
                         ),
                         SizedBox(height: 10,),
                         Buildtextfield(
-                          label: "Password",
+                          label: "Password".tr,
                           icon: Icons.lock,
                           controller: controller.passwordController,
                           keyboardType: TextInputType.text,
@@ -90,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                             TextButton(
                               onPressed: () {},
                               child: Text(
-                                "Forgot password ?",
+                                "ForgotPassword".tr,
                                 style: TextStyle(
                                   color: AppColors.primaryColor,
                                   fontSize: 14,
@@ -111,8 +111,8 @@ class LoginScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(25),
                               ),
                             ),
-                            child: const Text(
-                              "Log In",
+                            child: Text(
+                              "Log_In".tr,
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
@@ -124,13 +124,13 @@ class LoginScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children:  [
-                            Text("Don’t have an account? "),
+                            Text("Don’tHaveAnAccount".tr),
                             TextButton(
                               onPressed: () {
                                 Get.toNamed('/registerScreen');
                               },
                               child: Text(
-                                "Sign up",
+                                "Register".tr,
                                 style: TextStyle(
                                   color: AppColors.primaryColor,
                                   fontWeight: FontWeight.bold,

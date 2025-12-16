@@ -1,84 +1,6 @@
-/*
-
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../Controller/CurrentUser_Controller.dart';
-
-
-class ProfileScreen extends StatelessWidget {
-  ProfileScreen({super.key});
-
-  final controller = Get.put(CurrentUserController());
-
-
-  @override
-  Widget build(BuildContext context) {
-
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile'),
-        centerTitle: true,
-      ),
-      body: Obx(() {
-        if (controller.isLoading.value) {
-          return const Center(child: CircularProgressIndicator());
-        }
-
-        final user = controller.user.value;
-
-        if (user == null) {
-          return const Center(child: Text('No user data'));
-        }
-
-        return Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _infoTile('Username', user.userName),
-              _infoTile('Email', user.email),
-              _infoTile('Phone', user.phoneNumber),
-              _infoTile('Role', user.role),
-            ],
-          ),
-        );
-      }),
-    );
-  }
-
-  Widget _infoTile(String title, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        children: [
-          Text(
-            '$title: ',
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
-          Expanded(
-            child: Text(
-              value,
-              style: const TextStyle(fontSize: 16),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-*/
-
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../App_theme/AppColors.dart';
 import '../App_theme/Themem_Controller.dart';
 import '../Controller/CurrentUser_Controller.dart';
@@ -94,27 +16,19 @@ class ProfileScreen extends StatelessWidget {
 
     return Obx(() {
       if (controller.isLoading.value) {
-        return const Scaffold(
-          body: Center(child: CircularProgressIndicator()),
-        );
+        return const Scaffold(body: Center(child: CircularProgressIndicator()));
       }
 
       final user = controller.user.value;
 
       if (user == null) {
-        return const Scaffold(
-          body: Center(child: Text('No user data')),
-        );
+        return Scaffold(body: Center(child: Text('NoUserData'.tr)));
       }
 
       return Scaffold(
         backgroundColor: themeController.isDarkMode.value
             ? AppColors.E
             : AppColors.white,
-       /* appBar: AppBar(
-          title: Text("Profile".tr),
-          foregroundColor: Colors.white,
-        ),*/
         body: SafeArea(
           child: Column(
             children: [
@@ -181,8 +95,9 @@ class ProfileScreen extends StatelessWidget {
                   showModalBottomSheet(
                     context: context,
                     shape: const RoundedRectangleBorder(
-                      borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(25)),
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(25),
+                      ),
                     ),
                     builder: (_) => LanguageBottomSheet(),
                   );
@@ -202,13 +117,13 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-
 class ProfileItem extends StatelessWidget {
   final IconData icon;
   final String title;
   final VoidCallback onTap;
 
   const ProfileItem({
+    super.key,
     required this.icon,
     required this.title,
     required this.onTap,

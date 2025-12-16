@@ -31,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
               Column(
-                children: const [
+                children: [
                   Icon(
                     Icons.check_circle,
                     color: Colors.white,
@@ -39,7 +39,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    "NovaBank",
+                    "NovaBank".tr,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 26,
@@ -48,7 +48,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    "Welcome to NovaBank",
+                    "WelcomeToNovaBank".tr,
                     style: TextStyle(
                       color: Colors.white70,
                       fontSize: 16,
@@ -71,26 +71,26 @@ class RegisterScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Buildtextfield(
-                          label: "UserName",
+                          label: "UserName".tr,
                           icon: Icons.person,
                           controller: controller.nameController,
                           keyboardType: TextInputType.text,
                         ),
                         Buildtextfield(
-                          label: "Email",
+                          label: "Email".tr,
                           icon: Icons.email,
                           controller: controller.emailController,
                           keyboardType: TextInputType.text,
                         ),
                         Buildtextfield(
-                          label: "Password",
+                          label: "Password".tr,
                           icon: Icons.lock,
                           controller: controller.passwordController,
                           keyboardType: TextInputType.text,
                           obscureText: true,
                         ),
                         Buildtextfield(
-                          label: "PhoneNumber",
+                          label: "PhoneNumber".tr,
                           icon: Icons.phone,
                           controller: controller.phoneNumberController,
                           keyboardType: TextInputType.phone,
@@ -107,8 +107,8 @@ class RegisterScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(25),
                               ),
                             ),
-                            child: const Text(
-                              "Register",
+                            child:  Text(
+                              "Register".tr,
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
@@ -120,13 +120,13 @@ class RegisterScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children:  [
-                            Text("Already have an account? "),
+                            Text("AlreadyHaveAccount".tr),
                             TextButton(
                               onPressed: () {
                                 Get.toNamed('/loginScreen');
                               },
                               child: Text(
-                                "Log In",
+                                "Log_In".tr,
                                 style: TextStyle(
                                   color: AppColors.primaryColor,
                                   fontWeight: FontWeight.bold,

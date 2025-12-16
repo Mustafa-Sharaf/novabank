@@ -77,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                 child: BottomTabItem(
                   index: 0,
                   icon: Icons.report,
-                  label: 'SubmitReport'.tr,
+                  label: 'MyAccount'.tr,
                 ),
               ),
               SizedBox(width: MediaQuery.of(context).size.width * 0.4),
@@ -85,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                 child: BottomTabItem(
                   index:1,
                   icon: Icons.view_list,
-                  label: 'ViewReports'.tr,
+                  label: 'CreateAccount'.tr,
                 ),
               ),
             ],
