@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 
-class AppColors{
-  static const  primaryColor = Color(0xFF19314e);
-  static const  primaryColor2 = Color(0xFF9C27B0);
-  static const  backgroundColor = Color(0xFFf3f4f6);
+import 'AppColors.dart';
 
 
+
+class AppThemes {
+  static final lightTheme = ThemeData.light().copyWith(
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: AppColors.primaryColor,
+      selectionColor: Colors.green.withOpacity(0.4),
+      selectionHandleColor: Colors.green,
+    ),
+  );
+
+  static final darkTheme = ThemeData.dark().copyWith(
+    textSelectionTheme: TextSelectionThemeData(
+      cursorColor: AppColors.primaryColor,
+      selectionColor: Colors.green.withOpacity(0.4),
+      selectionHandleColor: Colors.green,
+    ),
+
+  );
 }

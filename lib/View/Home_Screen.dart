@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../App_theme/App_theme.dart';
+import '../App_theme/AppColors.dart';
 import '../Controller/Home_Controller.dart';
 import '../widgets/BottomTabItem.dart';
 
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
             elevation: 8,
             shape: const CircleBorder(),
             onPressed: () async {
-              Get.toNamed('/profile');
+              Get.toNamed('/profileScreen');
             },
             child: const Icon(Icons.person, size: 35, color: Colors.grey),
           ),

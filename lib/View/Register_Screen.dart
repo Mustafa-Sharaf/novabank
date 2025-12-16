@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:novabank/App_theme/App_theme.dart';
+import 'package:novabank/App_theme/AppColors.dart';
 import 'package:novabank/Controller/Register_Controller.dart';
 import '../widgets/buildTextField.dart';
 
