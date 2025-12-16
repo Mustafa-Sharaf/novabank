@@ -119,13 +119,18 @@ class RegisterScreen extends StatelessWidget {
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children:  [
                             Text("Already have an account? "),
-                            Text(
-                              "Log In",
-                              style: TextStyle(
-                                color: AppColors.primaryColor,
-                                fontWeight: FontWeight.bold,
+                            TextButton(
+                              onPressed: () {
+                                Get.toNamed('/loginScreen');
+                              },
+                              child: Text(
+                                "Log In",
+                                style: TextStyle(
+                                  color: AppColors.primaryColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ],

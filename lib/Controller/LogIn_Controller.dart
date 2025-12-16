@@ -27,6 +27,7 @@ class LogInController extends GetxController {
     ]);
 
     final error = validator.validateAll();
+    print("error------------------$error");
     if (error != null) {
       Get.snackbar(
         "Error",
@@ -55,6 +56,8 @@ class LogInController extends GetxController {
       if (response["success"] == true) {
         final token = response["data"]["token"];
         await storage.write("token", token);
+        await storage.write("refreshToken", response["data"]["refreshToken"]);
+
 
         Get.snackbar(
           "Success",
@@ -75,7 +78,7 @@ class LogInController extends GetxController {
         } else {
           errorMsg = "Server returned an error";
         }
-
+        print("errorMsg$errorMsg");
         Get.snackbar(
           "Error",
           errorMsg,

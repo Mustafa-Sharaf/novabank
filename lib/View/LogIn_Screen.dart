@@ -4,9 +4,6 @@ import '../App_theme/App_theme.dart';
 import '../Controller/LogIn_Controller.dart';
 import '../widgets/buildTextField.dart';
 
-
-
-
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
