@@ -7,44 +7,6 @@ const String baseUrl = "http://novasys.runasp.net/api/";
 
 class HttpHelper {
 
-  /*static Future<Map<String, dynamic>> postRequest({
-    required String endpoint,
-    required Map<String, dynamic> body,
-    Map<String, String>? headers,
-  }) async {
-    final url = Uri.parse(baseUrl + endpoint);
-    final defaultHeaders = {
-      "Content-Type": "application/json",
-      ...?headers,
-    };
-
-    try {
-      final response = await http.post(
-        url,
-        headers: defaultHeaders,
-        body: jsonEncode(body),
-      );
-
-      if (response.statusCode >= 200 && response.statusCode < 300) {
-        return {
-          "success": true,
-          "status": response.statusCode,
-          "data": jsonDecode(response.body),
-        };
-      } else {
-        return {
-          "success": false,
-          "status": response.statusCode,
-          "message": response.body,
-        };
-      }
-    } catch (e) {
-      return {
-        "success": false,
-        "message": e.toString(),
-      };
-    }
-  }*/
 
   static Future<Map<String, dynamic>> postRequest({
     required String endpoint,
@@ -137,22 +99,38 @@ class HttpHelper {
   }
 
 
+
   static Future<Map<String, dynamic>> getRequest({
     required String endpoint,
     Map<String, String>? headers,
   }) async {
+    final storage = GetStorage();
+    final token = storage.read("token");
+
     final url = Uri.parse(baseUrl + endpoint);
+
+    final defaultHeaders = {
+      if (token != null) "Authorization": "Bearer $token",
+      ...?headers,
+    };
+
     try {
-      final response = await http.get(url, headers: headers);
+      final response = await http.get(url, headers: defaultHeaders);
+
       if (response.statusCode >= 200 && response.statusCode < 300) {
         return {"success": true, "data": jsonDecode(response.body)};
       } else {
-        return {"success": false, "message": response.body};
+        return {
+          "success": false,
+          "status": response.statusCode,
+          "message": response.body
+        };
       }
     } catch (e) {
       return {"success": false, "message": e.toString()};
     }
   }
+
 
 
 
@@ -196,3 +174,63 @@ class HttpHelper {
 }
 
 
+
+
+/*static Future<Map<String, dynamic>> postRequest({
+    required String endpoint,
+    required Map<String, dynamic> body,
+    Map<String, String>? headers,
+  }) async {
+    final url = Uri.parse(baseUrl + endpoint);
+    final defaultHeaders = {
+      "Content-Type": "application/json",
+      ...?headers,
+    };
+
+    try {
+      final response = await http.post(
+        url,
+        headers: defaultHeaders,
+        body: jsonEncode(body),
+      );
+
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        return {
+          "success": true,
+          "status": response.statusCode,
+          "data": jsonDecode(response.body),
+        };
+      } else {
+        return {
+          "success": false,
+          "status": response.statusCode,
+          "message": response.body,
+        };
+      }
+    } catch (e) {
+      return {
+        "success": false,
+        "message": e.toString(),
+      };
+    }
+  }*/
+
+
+/*
+  static Future<Map<String, dynamic>> getRequest({
+    required String endpoint,
+    Map<String, String>? headers,
+  }) async {
+    final url = Uri.parse(baseUrl + endpoint);
+    try {
+      final response = await http.get(url, headers: headers);
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        return {"success": true, "data": jsonDecode(response.body)};
+      } else {
+        return {"success": false, "message": response.body};
+      }
+    } catch (e) {
+      return {"success": false, "message": e.toString()};
+    }
+  }
+*/

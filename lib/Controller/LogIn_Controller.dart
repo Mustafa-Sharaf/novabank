@@ -27,7 +27,7 @@ class LogInController extends GetxController {
     ]);
 
     final error = validator.validateAll();
-    print("error------------------$error");
+    //print("error------------------$error");
     if (error != null) {
       Get.snackbar(
         "Error",
@@ -104,4 +104,3 @@ class LogInController extends GetxController {
     super.onClose();
   }
 }
-//mustafa sharaf
