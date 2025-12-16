@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/registerScreen', page: ()=>const RegisterScreen()),
         GetPage(name: '/loginScreen', page: ()=>const LoginScreen()),
-        GetPage(name: '/homeScreen', page: ()=>const HomeScreen()),
+        GetPage(name: '/homeScreen', page: ()=> HomeScreen()),
 
       ],
     );
