@@ -7,6 +7,7 @@ import '../widgets/BottomTabItem.dart';
 import 'HomeContent_Screen.dart';
 import 'More_Screen.dart';
 import 'MyAccounts_Screen.dart';
+import 'Transfer_Screen.dart';
 
 
 
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   final List<Widget> pages = [
     HomeContentScreen(),
     MyAccountsScreen(),
-    MyPaymentsScreen(),
+    TransferScreen(),
     MoreScreen(),
   ];
 
@@ -26,28 +27,31 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       //backgroundColor: themeController.isDarkMode.value?AppColors.E : AppColors.white,
       appBar: AppBar(
-        backgroundColor: AppColors.primaryColor,
+        //backgroundColor: AppColors.primaryColor,
         actions: [
           Text(
             "Home_Screen".tr,
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.primaryColor,
               fontSize: MediaQuery.of(context).size.width * 0.055,
             ),
           ),
-          SizedBox(width: MediaQuery.of(context).size.width * 0.35),
-          /*IconButton(
-            icon: const Text('🔎', style: TextStyle(fontSize: 25)),
-            onPressed: () => {},
-          ),*/
-          //SizedBox(width: MediaQuery.of(context).size.width * 0.01),
+          SizedBox(width: MediaQuery.of(context).size.width * 0.25),
           IconButton(
             icon: const Text('🔔', style: TextStyle(fontSize: 20)),
             onPressed: () => Get.toNamed('/notificationsScreen'),
           ),
-          SizedBox(width: MediaQuery.of(context).size.width * 0.1),
+          SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+          Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.red.withOpacity(0.1),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(Icons.logout, color: Colors.red),
+          ),
+          SizedBox(width: MediaQuery.of(context).size.width * 0.05),
         ],
-
       ),
       body: Obx(
             () =>
@@ -97,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                 child: BottomTabItem(
                   index:2,
                   icon: Icons.payments,
-                  label: 'MyPayments'.tr,
+                  label: 'Transfer'.tr,
                 ),
               ),
               Expanded(

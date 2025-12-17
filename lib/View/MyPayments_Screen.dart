@@ -9,11 +9,11 @@ class MyPaymentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
+      /*appBar:AppBar(
         title: Text("My Payments Screen"),
         backgroundColor: AppColors.primaryColor,
         foregroundColor: AppColors.white,
-      ),
+      ),*/
     );
   }
 }

@@ -13,11 +13,11 @@ class MoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+    /*  appBar: AppBar(
         title: const Text("More"),
         backgroundColor: AppColors.primaryColor,
         foregroundColor: AppColors.white,
-      ),
+      ),*/
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: GridView.count(
@@ -30,7 +30,7 @@ class MoreScreen extends StatelessWidget {
               icon: Icons.trending_up,
               title: "Profit calculation",
               color: const Color(0xFF4CAF50),
-              onTap: () => Get.to(() => const ProfitScreen()),
+              onTap: () => Get.to(() =>  ProfitScreen()),
             ),
             MoreItem(
               icon: Icons.location_on,

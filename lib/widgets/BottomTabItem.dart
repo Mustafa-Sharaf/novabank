@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../App_theme/AppColors.dart';
 import '../Controller/Home_Controller.dart';
-import '../View/More_Screen.dart';
-import '../View/MyAccounts_Screen.dart';
-import '../View/MyPayments_Screen.dart';
+
 
 
 
@@ -28,17 +25,10 @@ class BottomTabItem extends StatelessWidget {
     return Obx(() {
       final isSelected = controller.currentIndex.value == index;
       return GestureDetector(
-        onTap: (){
-          if (index == 1) {
-            Get.to(() =>  MyAccountsScreen());
-          } else if (index == 3) {
-             Get.to(() =>  MoreScreen());
-          } else if (index == 2) {
-             Get.to(() =>  MyPaymentsScreen());
-          } else {
-            controller.changeTabIndex(index);
-          }
+        onTap: () {
+          controller.changeTabIndex(index);
         },
+
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,

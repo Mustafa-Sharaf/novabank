@@ -8,10 +8,11 @@ class CurrentUserController extends GetxController {
   final isLoading = false.obs;
   final user = Rxn<CurrentUser>();
   final errorMessage = ''.obs;
-
+  final box = GetStorage();
   @override
   void onInit() {
     super.onInit();
+    box.write('lastSeen', DateTime.now().toIso8601String());
     fetchCurrentUser();
   }
 
@@ -23,17 +24,9 @@ class CurrentUserController extends GetxController {
       isLoading.value = true;
       errorMessage.value = '';
 
-
       final response = await HttpHelper.getRequest(
         endpoint: 'users/GetCurrentUser',
       );
-
-    /*  final response = await HttpHelper.getRequest(
-        endpoint: 'users/GetCurrentUser',
-        headers: {
-          'accept': 'text/plain',
-        },
-      );*/
 
       if (response['success'] == true) {
         user.value = CurrentUser.fromJson(response['data']);
