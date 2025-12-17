@@ -65,8 +65,12 @@ class LogInController extends GetxController {
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
+        await storage.save();
 
-        Get.offNamed('/homeScreen');
+        print("TOKEN SAVED: ${storage.read("token")}");
+        print("REFRESH SAVED: ${storage.read("refreshToken")}");
+        Get.offAllNamed('/homeScreen');
+
       } else {
         String errorMsg = "";
         if (response["data"] != null && response["data"] is List) {

@@ -20,7 +20,7 @@ class MyLanguage implements Translations{
       "Don’tHaveAnAccount":"Don’t have an account? ",
       "Home_Screen":"Home Screen",
       "CreateAccount":"Create Account",
-      "MyAccount":"My Account",
+      "MyAccounts":"My Accounts",
       "NoUserData":"No user data",
       "LanguageEditing":"Language Editing",
       "discoloration":"discoloration",
@@ -44,15 +44,25 @@ class MyLanguage implements Translations{
 
     },
     "ar":{
-      "NovaBank":"نوفا بنك",
-      "WelcomeToNovaBank":"أهلا بكم في نوفا بنك",
-      "Register":"سجل",
-      "PhoneNumber":"رقم الموبايل",
-      "Password":"كلمة المرور",
-      "Email":"عنوان البريد الإلكتروني",
-      "UserName":"اسم المستخدم",
-      "Sign_Up":"تسجيل الدخول",
-      "AlreadyHaveAccount":"هل قمت بالتسجيل بالفعل؟",
+      "NovaBank": "نوفا بنك",
+      "WelcomeToNovaBank": "مرحبًا بك في نوفا بنك",
+      "Register": "إنشاء حساب",
+      "PhoneNumber": "رقم الهاتف",
+      "Password": "كلمة المرور",
+      "Email": "البريد الإلكتروني",
+      "UserName": "اسم المستخدم",
+      "AlreadyHaveAccount": "هل لديك حساب بالفعل؟ ",
+      "Log_In": "تسجيل الدخول",
+      "WelcomeBack": "مرحبًا بعودتك،",
+      "LogIn": "تسجيل الدخول!",
+      "ForgotPassword": "هل نسيت كلمة المرور؟",
+      "Don’tHaveAnAccount": "ليس لديك حساب؟ ",
+      "Home_Screen": "الصفحة الرئيسية",
+      "CreateAccount": "إنشاء حساب",
+      "MyAccount": "حسابي",
+      "NoUserData": "لا توجد بيانات للمستخدم",
+      "LanguageEditing": "تغيير اللغة",
+      "discoloration": "تغيير المظهر"
 
 
 

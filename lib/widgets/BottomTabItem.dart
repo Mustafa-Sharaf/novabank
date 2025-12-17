@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 
 import '../App_theme/AppColors.dart';
 import '../Controller/Home_Controller.dart';
+import '../View/More_Screen.dart';
+import '../View/MyAccounts_Screen.dart';
+import '../View/MyPayments_Screen.dart';
 
 
 
@@ -27,11 +30,11 @@ class BottomTabItem extends StatelessWidget {
       return GestureDetector(
         onTap: (){
           if (index == 1) {
-            //Get.to(() =>  ComplaintScreen());
+            Get.to(() =>  MyAccountsScreen());
           } else if (index == 3) {
-            // Get.to(() =>  CartScreen());
-          } else if (index == 4) {
-            // Get.to(() =>  BillsScreen());
+             Get.to(() =>  MoreScreen());
+          } else if (index == 2) {
+             Get.to(() =>  MyPaymentsScreen());
           } else {
             controller.changeTabIndex(index);
           }

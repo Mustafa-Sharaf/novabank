@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:novabank/View/MyPayments_Screen.dart';
 import '../App_theme/AppColors.dart';
 import '../Controller/Home_Controller.dart';
 import '../widgets/BottomTabItem.dart';
+import 'HomeContent_Screen.dart';
+import 'More_Screen.dart';
+import 'MyAccounts_Screen.dart';
 
 
 
@@ -10,9 +14,10 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final BottomNavController controller = Get.put(BottomNavController());
   final List<Widget> pages = [
-    //SubmitReportScreen(),
-   // ComplaintScreen(),
-   // ProfileScreen(),
+    HomeContentScreen(),
+    MyAccountsScreen(),
+    MyPaymentsScreen(),
+    MoreScreen(),
   ];
 
   @override
@@ -30,12 +35,12 @@ class HomeScreen extends StatelessWidget {
               fontSize: MediaQuery.of(context).size.width * 0.055,
             ),
           ),
-          SizedBox(width: MediaQuery.of(context).size.width * 0.25),
-          IconButton(
+          SizedBox(width: MediaQuery.of(context).size.width * 0.35),
+          /*IconButton(
             icon: const Text('🔎', style: TextStyle(fontSize: 25)),
             onPressed: () => {},
-          ),
-          SizedBox(width: MediaQuery.of(context).size.width * 0.01),
+          ),*/
+          //SizedBox(width: MediaQuery.of(context).size.width * 0.01),
           IconButton(
             icon: const Text('🔔', style: TextStyle(fontSize: 20)),
             onPressed: () => Get.toNamed('/notificationsScreen'),
@@ -76,16 +81,30 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 child: BottomTabItem(
                   index: 0,
-                  icon: Icons.report,
-                  label: 'MyAccount'.tr,
+                  icon: Icons.home,
+                  label: 'Home'.tr,
                 ),
               ),
-              SizedBox(width: MediaQuery.of(context).size.width * 0.4),
               Expanded(
                 child: BottomTabItem(
-                  index:1,
-                  icon: Icons.view_list,
-                  label: 'CreateAccount'.tr,
+                  index: 1,
+                  icon: Icons.account_balance,
+                  label: 'MyAccounts'.tr,
+                ),
+              ),
+              SizedBox(width: MediaQuery.of(context).size.width * 0.2),
+              Expanded(
+                child: BottomTabItem(
+                  index:2,
+                  icon: Icons.payments,
+                  label: 'MyPayments'.tr,
+                ),
+              ),
+              Expanded(
+                child: BottomTabItem(
+                  index:3,
+                  icon: Icons.menu,
+                  label: 'More'.tr,
                 ),
               ),
             ],

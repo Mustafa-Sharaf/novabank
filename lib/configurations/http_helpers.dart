@@ -100,7 +100,7 @@ class HttpHelper {
 
 
 
-  static Future<Map<String, dynamic>> getRequest({
+  /*static Future<Map<String, dynamic>> getRequest({
     required String endpoint,
     Map<String, String>? headers,
   }) async {
@@ -129,7 +129,56 @@ class HttpHelper {
     } catch (e) {
       return {"success": false, "message": e.toString()};
     }
+  }*/
+
+  static Future<Map<String, dynamic>> getRequest({
+    required String endpoint,
+    Map<String, String>? headers,
+  }) async {
+    final storage = GetStorage();
+    final token = storage.read("token");
+
+    final url = Uri.parse(baseUrl + endpoint);
+
+    final defaultHeaders = {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      if (token != null) "Authorization": "Bearer $token",
+      ...?headers,
+    };
+
+    try {
+      final response = await http.get(url, headers: defaultHeaders);
+
+      print("STATUS: ${response.statusCode}");
+      print("BODY: ${response.body}");
+
+      // ✅ نجاح
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        return {
+          "success": true,
+          "data": jsonDecode(response.body),
+        };
+      }
+
+      // 🔥 هنا كان النقص
+      if (response.statusCode == 401) {
+        final refreshed = await _refreshToken();
+        if (refreshed) {
+          return getRequest(endpoint: endpoint, headers: headers);
+        }
+      }
+
+      return {
+        "success": false,
+        "status": response.statusCode,
+        "message": response.body,
+      };
+    } catch (e) {
+      return {"success": false, "message": e.toString()};
+    }
   }
+
 
 
 

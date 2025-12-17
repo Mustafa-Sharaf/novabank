@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-
+import 'package:get_storage/get_storage.dart';
 import '../Model/CurrentUser_Model.dart';
 import '../configurations/http_helpers.dart';
 
@@ -16,16 +16,24 @@ class CurrentUserController extends GetxController {
   }
 
   Future<void> fetchCurrentUser() async {
+    print('TOKEN: ${GetStorage().read("token")}');
+    print('TOKEN: ${GetStorage().read("token")}');
+
     try {
       isLoading.value = true;
       errorMessage.value = '';
 
+
       final response = await HttpHelper.getRequest(
+        endpoint: 'users/GetCurrentUser',
+      );
+
+    /*  final response = await HttpHelper.getRequest(
         endpoint: 'users/GetCurrentUser',
         headers: {
           'accept': 'text/plain',
         },
-      );
+      );*/
 
       if (response['success'] == true) {
         user.value = CurrentUser.fromJson(response['data']);
