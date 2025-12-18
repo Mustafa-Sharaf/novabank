@@ -48,6 +48,13 @@ class MyLanguage implements Translations{
       "ExchangeRate":"Exchange Rate",
       "Location":"Location",
       "ProfitCalculation":"ProfitCalculation",
+      "NoAccountsAvailable":"No accounts available.",
+      "CreatedAt":"Created at",
+      "State":"State",
+      "Type":"Type",
+      "AccountCode":"Account code",
+      "Account":"Account",
+      "":"",
       "":"",
       "":"",
       "":"",
@@ -112,6 +119,12 @@ class MyLanguage implements Translations{
       "ExchangeRate":"سعر الصرف",
       "Location":"الموقع",
       "ProfitCalculation":"حساب الربح",
+      "NoAccountsAvailable":"لا توجد حسابات متاحة.",
+      "CreatedAt":"تم الإنشاء في",
+      "State":"حالة الحساب",
+      "Type":"نوع الحساب",
+      "AccountCode":"رمز الحساب",
+      "Account":"الحساب",
 
 
 

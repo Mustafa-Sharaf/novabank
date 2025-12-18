@@ -19,7 +19,7 @@ class TransferScreen extends StatelessWidget {
               controller: transferController.fromAccountIdController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: "From Account",
+                labelText: "FromAccount".tr,
                 floatingLabelStyle: TextStyle(
                   color: AppColors.primaryColor,
                   fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class TransferScreen extends StatelessWidget {
               controller: transferController.toAccountIdController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: "To Account",
+                labelText: "ToAccount".tr,
                 floatingLabelStyle: TextStyle(
                   color: AppColors.primaryColor,
                   fontWeight: FontWeight.bold,
@@ -63,7 +63,7 @@ class TransferScreen extends StatelessWidget {
               controller: transferController.amountController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: "Amount",
+                labelText: "Amount".tr,
                 floatingLabelStyle: TextStyle(
                   color: AppColors.primaryColor,
                   fontWeight: FontWeight.bold,
@@ -91,7 +91,7 @@ class TransferScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 14),
                       ),
                       onPressed: () => transferController.transfer(),
-                      child: const Text('Transfer',style: TextStyle(color: Colors.white),),
+                      child:  Text('Transfer'.tr,style: TextStyle(color: Colors.white),),
                     ),
                   ),
             const SizedBox(height: 16),
@@ -114,7 +114,7 @@ class TransferScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text('Transaction Number: ${tx.id}'),
+                              Text('${"TransactionNumber".tr}: ${tx.id}'),
                               InkWell(
                                 onTap: () {
                                   transferController.deleteTransaction(index);
@@ -128,12 +128,12 @@ class TransferScreen extends StatelessWidget {
                             ],
                           ),
 
-                          Text('Amount: ${tx.amount}'),
-                          Text('Status: ${tx.status}'),
-                          Text('From Account: ${tx.fromAccountId}'),
-                          Text('To Account: ${tx.toAccountId}'),
+                          Text('${"Amount".tr}: ${tx.amount}'),
+                          Text('${"Status".tr}: ${tx.status}'),
+                          Text('${"FromAccount".tr}: ${tx.fromAccountId}'),
+                          Text('${"ToAccount".tr}: ${tx.toAccountId}'),
                           Text(
-                            'Approved At: ${tx.approvedAt.toLocal()}',
+                            '${"ApprovedAt".tr}: ${tx.approvedAt.toLocal()}',
                             style: const TextStyle(color: Colors.grey),
                           ),
 

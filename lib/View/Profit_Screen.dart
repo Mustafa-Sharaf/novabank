@@ -130,10 +130,6 @@ class _ProfitScreenState extends State<ProfitScreen> {
                     children: [
                       Text(result, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                       const SizedBox(height: 8),
-                      /*const Text(
-                        'تم احتساب الربح المتوقع بناءً على متوسط نسبة الربح الموزعة عن آخر ربع',
-                        style: TextStyle(color: Colors.grey, fontSize: 12),
-                      ),*/
                     ],
                   ),
                 ),
