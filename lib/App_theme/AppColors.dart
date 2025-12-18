@@ -8,5 +8,4 @@ class AppColors{
   static const white = Colors.white;
   static const E = Color(0x5E0F0F10);
 
-
 }

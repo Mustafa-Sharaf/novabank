@@ -17,8 +17,8 @@ class CurrentUserController extends GetxController {
   }
 
   Future<void> fetchCurrentUser() async {
-    print('TOKEN: ${GetStorage().read("token")}');
-    print('TOKEN: ${GetStorage().read("token")}');
+   // print('TOKEN: ${GetStorage().read("token")}');
+   // print('TOKEN: ${GetStorage().read("token")}');
 
     try {
       isLoading.value = true;

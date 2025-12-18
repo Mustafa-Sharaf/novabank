@@ -26,7 +26,7 @@ class HomeContentScreen extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Latest transfers",
+                    "LatestTransfers".tr,
                     style: GoogleFonts.cairo(
                       fontWeight: FontWeight.bold,
                       color: AppColors.primaryColor,
@@ -54,7 +54,7 @@ class HomeContentScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Text('Transaction Number: ${tx.id}'),
+                                      Text('${"TransactionNumber".tr}: ${tx.id}'),
                                       InkWell(
                                         onTap: () {
                                           transferController.deleteTransaction(
@@ -70,12 +70,12 @@ class HomeContentScreen extends StatelessWidget {
                                     ],
                                   ),
 
-                                  Text('Amount: ${tx.amount}'),
-                                  Text('Status: ${tx.status}'),
-                                  Text('From Account: ${tx.fromAccountId}'),
-                                  Text('To Account: ${tx.toAccountId}'),
+                                  Text('${"Amount".tr}: ${tx.amount}'),
+                                  Text('${"Status".tr}: ${tx.status}'),
+                                  Text('${"FromAccount".tr}: ${tx.fromAccountId}'),
+                                  Text('${"ToAccount".tr}: ${tx.toAccountId}'),
                                   Text(
-                                    'Approved At: ${tx.approvedAt.toLocal()}',
+                                    '${"ApprovedAt".tr}: ${tx.approvedAt.toLocal()}',
                                     style: const TextStyle(color: Colors.grey),
                                   ),
                                 ],

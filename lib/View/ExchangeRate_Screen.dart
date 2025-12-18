@@ -13,7 +13,7 @@ class ExchangeRateScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Exchange Rate (SYP)"),
+        title:  Text("ExchangeRate(SYP)".tr),
         backgroundColor: AppColors.primaryColor,
         foregroundColor: Colors.white,
       ),
@@ -28,16 +28,17 @@ class ExchangeRateScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Last Update: ${controller.lastUpdate.value}",
-                style: TextStyle(color: Colors.grey.shade600),
+                /*"Last Update: ${controller.lastUpdate.value}",*/
+              "${'LastUpdate'.tr}: ${controller.lastUpdate.value}",
+              style: TextStyle(color: Colors.grey.shade600),
               ),
               const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Expanded(flex: 3, child: Text("Currency", style: _headerStyle)),
-                  Expanded(flex: 2, child: Text("Buy", style: _headerStyle)),
-                  Expanded(flex: 2, child: Text("Sell", style: _headerStyle)),
+                children: [
+                  Expanded(flex: 3, child: Text("Currency".tr, style: _headerStyle)),
+                  Expanded(flex: 2, child: Text("Buy".tr, style: _headerStyle)),
+                  Expanded(flex: 2, child: Text("Sell".tr, style: _headerStyle)),
                 ],
               ),
               const Divider(height: 30),

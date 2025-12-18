@@ -13,11 +13,6 @@ class MoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    /*  appBar: AppBar(
-        title: const Text("More"),
-        backgroundColor: AppColors.primaryColor,
-        foregroundColor: AppColors.white,
-      ),*/
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: GridView.count(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:novabank/View/MyPayments_Screen.dart';
 import '../App_theme/AppColors.dart';
 import '../Controller/Home_Controller.dart';
 import '../widgets/BottomTabItem.dart';

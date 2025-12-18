@@ -36,7 +36,7 @@ class ExchangeRateController extends GetxController {
             },
             ...ratesMap.entries.map((e) {
               double rateInUSD = (e.value as num).toDouble();
-              double rateInSYP = usdToSyp / rateInUSD; // بدل الضرب
+              double rateInSYP = usdToSyp / rateInUSD;
 
 
               return {

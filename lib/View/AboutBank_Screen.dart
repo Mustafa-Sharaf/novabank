@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:novabank/App_theme/AppColors.dart';
 
 class AboutBankScreen extends StatelessWidget {
@@ -8,7 +9,7 @@ class AboutBankScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("About NovaBank"),
+        title: Text("AboutNovaBank".tr),
         backgroundColor: AppColors.primaryColor,
         foregroundColor: AppColors.white,
       ),
@@ -17,8 +18,6 @@ class AboutBankScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 20),
-
-            /// Bank Icon
             CircleAvatar(
               radius: 45,
               backgroundColor: AppColors.primaryColor.withOpacity(0.1),
@@ -28,33 +27,25 @@ class AboutBankScreen extends StatelessWidget {
                 color: AppColors.primaryColor,
               ),
             ),
-
             const SizedBox(height: 20),
-
-            /// Bank Name
             Text(
-              "NovaBank",
+              "NovaBank".tr,
               style: TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.bold,
                 color: AppColors.primaryColor,
               ),
             ),
-
             const SizedBox(height: 8),
-
             Text(
-              "Your Digital Banking Partner",
+              "YourDigitalBankingPartner".tr,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey,
                 letterSpacing: 1,
               ),
             ),
-
             const SizedBox(height: 30),
-
-            /// Info Card
             Card(
               elevation: 6,
               shape: RoundedRectangleBorder(
@@ -64,29 +55,29 @@ class AboutBankScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     _AboutItem(
                       icon: Icons.security,
                       text:
-                      "NovaBank is a modern digital bank providing fast and secure banking services.",
+                      "NovaBankServices".tr,
                     ),
                     SizedBox(height: 12),
                     _AboutItem(
                       icon: Icons.credit_card,
                       text:
-                      "Easily manage your accounts, payments, and transfers anytime, anywhere.",
+                      "EasilyManage".tr,
                     ),
                     SizedBox(height: 12),
                     _AboutItem(
                       icon: Icons.lock,
                       text:
-                      "We apply the highest security standards to protect your financial data.",
+                      "WeApply".tr,
                     ),
                     SizedBox(height: 12),
                     _AboutItem(
                       icon: Icons.trending_up,
                       text:
-                      "Our goal is to deliver a smart banking experience tailored to your needs.",
+                      "OurGoal".tr,
                     ),
                   ],
                 ),
