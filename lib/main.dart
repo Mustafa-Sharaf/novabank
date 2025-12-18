@@ -5,6 +5,7 @@ import 'App_theme/App_theme.dart';
 import 'App_theme/Themem_Controller.dart';
 import 'Controller/CurrentUser_Controller.dart';
 import 'Controller/MyAccounts_Controller.dart';
+import 'Controller/Transfer_Controller.dart';
 import 'View/CurrentUser_Screen.dart';
 import 'View/Home_Screen.dart';
 import 'View/LogIn_Screen.dart';
@@ -20,7 +21,7 @@ void main()async {
   themeController.loadThemeFromStorage();
   Get.put(CurrentUserController());
   Get.put(AccountsController());
-
+   Get.put(TransferController());
   runApp(const MyApp());
 }
 

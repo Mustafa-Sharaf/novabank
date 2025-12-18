@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../App_theme/AppColors.dart';
 import '../Controller/Transfer_Controller.dart';
-import '../widgets/buildTextField.dart';
 
 class TransferScreen extends StatelessWidget {
   TransferScreen({super.key});
-
   final TransferController transferController = Get.put(TransferController());
 
   @override
@@ -15,7 +13,6 @@ class TransferScreen extends StatelessWidget {
       () => Padding(
         padding: const EdgeInsets.all(16),
         child: ListView(
-          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 16),
             TextField(

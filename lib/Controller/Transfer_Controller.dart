@@ -22,7 +22,11 @@ class TransferController extends GetxController {
     final amount = int.tryParse(amountController.text);
 
     if (fromId == null || toId == null || amount == null || amount <= 0) {
-      Get.snackbar('Error', 'Please enter valid data');
+      Get.snackbar(
+          'Error',
+          'Please enter valid data',
+        backgroundColor: Colors.red
+      );
       return;
     }
 
@@ -54,9 +58,15 @@ class TransferController extends GetxController {
         amountController.clear();
         toAccountIdController.clear();
 
-        Get.snackbar('Success', 'Transfer completed successfully');
+        Get.snackbar(
+            'Success',
+            'Transfer completed successfully',
+            backgroundColor: Colors.green);
       } else {
-        Get.snackbar('Error', 'Failed: ${response.statusCode}');
+        Get.snackbar(
+            'Error',
+            'Failed: ${response.statusCode}',
+            backgroundColor: Colors.red);
       }
     } catch (e) {
       Get.snackbar('Error', e.toString());
@@ -69,7 +79,7 @@ class TransferController extends GetxController {
     Get.snackbar(
       'Deleted',
       'Transaction removed successfully',
-      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: Colors.green,
     );
   }
 
