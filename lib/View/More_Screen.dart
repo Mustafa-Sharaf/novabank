@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:novabank/App_theme/AppColors.dart';
 import '../widgets/BottomMoreItem.dart';
 import 'AboutBank_Screen.dart';
 import 'ExchangeRate_Screen.dart';
@@ -23,25 +22,25 @@ class MoreScreen extends StatelessWidget {
           children:  [
             MoreItem(
               icon: Icons.trending_up,
-              title: "Profit calculation",
+              title: "ProfitCalculation".tr,
               color: const Color(0xFF4CAF50),
               onTap: () => Get.to(() =>  ProfitScreen()),
             ),
             MoreItem(
               icon: Icons.location_on,
-              title: "Location",
+              title: "Location".tr,
               color: const Color(0xFF2196F3),
               onTap: () => Get.to(() => const LocationScreen()),
             ),
             MoreItem(
               icon: Icons.currency_exchange,
-              title: "Exchange rate",
+              title: "ExchangeRate".tr,
               color: const Color(0xFFFF9800),
               onTap: () => Get.to(() => const ExchangeRateScreen()),
             ),
             MoreItem(
               icon: Icons.info_outline,
-              title: "About the bank",
+              title: "AboutNovaBank".tr,
               color: const Color(0xFF9C27B0),
               onTap: () => Get.to(() => const AboutBankScreen()),
             ),

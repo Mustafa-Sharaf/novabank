@@ -45,9 +45,9 @@ class MyLanguage implements Translations{
       "Status":"Status",
       "Amount":"Amount",
       "TransactionNumber":"Transaction Number",
-      "":"",
-      "":"",
-      "":"",
+      "ExchangeRate":"Exchange Rate",
+      "Location":"Location",
+      "ProfitCalculation":"ProfitCalculation",
       "":"",
       "":"",
       "":"",
@@ -109,6 +109,9 @@ class MyLanguage implements Translations{
       "Status":"حالة",
       "Amount":"الكمية",
       "TransactionNumber":"رقم التحويلة",
+      "ExchangeRate":"سعر الصرف",
+      "Location":"الموقع",
+      "ProfitCalculation":"حساب الربح",
 
 
 
