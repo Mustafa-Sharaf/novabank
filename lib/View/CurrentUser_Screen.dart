@@ -18,9 +18,7 @@ class ProfileScreen extends StatelessWidget {
       if (controller.isLoading.value) {
         return const Scaffold(body: Center(child: CircularProgressIndicator()));
       }
-
       final user = controller.user.value;
-
       if (user == null) {
         return Scaffold(body: Center(child: Text('NoUserData'.tr)));
       }

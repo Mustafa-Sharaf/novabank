@@ -54,9 +54,9 @@ class MyLanguage implements Translations{
       "Type":"Type",
       "AccountCode":"Account code",
       "Account":"Account",
-      "":"",
-      "":"",
-      "":"",
+      "Welcome":"Welcome 👋",
+      "SelectedAccount":"Selected Account",
+      "Balance":"Balance",
       "":"",
 
 
@@ -125,6 +125,9 @@ class MyLanguage implements Translations{
       "Type":"نوع الحساب",
       "AccountCode":"رمز الحساب",
       "Account":"الحساب",
+      "Welcome":"أهلاً وسهلاً 👋",
+      "SelectedAccount":"الحساب المختار",
+      "Balance":"الرصيد",
 
 
 

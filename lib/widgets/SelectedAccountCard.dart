@@ -28,8 +28,8 @@ class SelectedAccountCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Selected Account',
+             Text(
+              'SelectedAccount'.tr,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey,
@@ -45,10 +45,10 @@ class SelectedAccountCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            Text('State: ${account.state}'),
+            Text('${"State".tr}: ${account.state}'),
             const SizedBox(height: 6),
             Text(
-              'Balance: ${account.balance.toStringAsFixed(2)}',
+              '${"Balance".tr}: ${account.balance.toStringAsFixed(2)}',
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,

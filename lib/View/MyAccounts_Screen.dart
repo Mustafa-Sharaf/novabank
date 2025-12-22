@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../App_theme/AppColors.dart';
+import '../App_theme/Themem_Controller.dart';
 import '../Controller/MyAccounts_Controller.dart';
 
 class MyAccountsScreen extends StatelessWidget {
@@ -39,6 +40,7 @@ class MyAccountsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<AccountsController>();
+    final themeController = Get.find<ThemeController>();
     return Scaffold(
       body: Obx(() {
         if (controller.isLoading.value) {
@@ -67,7 +69,10 @@ class MyAccountsScreen extends StatelessWidget {
                 controller.selectAccount(account);
               },
               child: Card(
-                color: getCardColorByType(account.type),
+                color: themeController.isDarkMode.value
+                    ? AppColors.componentLight
+                    : getCardColorByType(account.type),
+                //color: getCardColorByType(account.type),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),

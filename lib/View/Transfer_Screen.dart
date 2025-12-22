@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../App_theme/AppColors.dart';
+import '../App_theme/Themem_Controller.dart';
 import '../Controller/Transfer_Controller.dart';
 
 class TransferScreen extends StatelessWidget {
@@ -9,6 +10,7 @@ class TransferScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeController = Get.find<ThemeController>();
     return Obx(
       () => Padding(
         padding: const EdgeInsets.all(16),
@@ -104,7 +106,10 @@ class TransferScreen extends StatelessWidget {
                   final tx = transferController.transactions[index];
                   return Card(
                     margin: const EdgeInsets.only(bottom: 12),
-                    color: Colors.green.shade50,
+                    //color: Colors.green.shade50,
+                    color: themeController.isDarkMode.value
+                        ? AppColors.componentDark
+                        : AppColors.componentLight,
                     child: Padding(
                       padding: const EdgeInsets.all(12),
                       child: Column(

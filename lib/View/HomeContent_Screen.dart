@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:novabank/App_theme/AppColors.dart';
+import '../App_theme/Themem_Controller.dart';
 import '../Controller/Transfer_Controller.dart';
 import '../widgets/SelectedAccountCard.dart';
 import '../widgets/WelcomeUserCard.dart';
@@ -12,6 +13,7 @@ class HomeContentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final transferController = Get.find<TransferController>();
+    final themeController = Get.find<ThemeController>();
 
     return Scaffold(
       body: SafeArea(
@@ -29,7 +31,10 @@ class HomeContentScreen extends StatelessWidget {
                     "LatestTransfers".tr,
                     style: GoogleFonts.cairo(
                       fontWeight: FontWeight.bold,
-                      color: AppColors.primaryColor,
+                      color: themeController.isDarkMode.value
+                          ? AppColors.white
+                          : AppColors.primaryColor,
+                      //color: AppColors.primaryColor,
                     ),
                   ),
                 ],
@@ -42,7 +47,10 @@ class HomeContentScreen extends StatelessWidget {
                           final tx = transferController.transactions[index];
                           return Card(
                             margin: const EdgeInsets.only(bottom: 12),
-                            color: Colors.green.shade50,
+                            color: themeController.isDarkMode.value
+                                ? AppColors.componentDark
+                                : AppColors.componentLight,
+                            //color: Colors.green.shade50,
                             child: Padding(
                               padding: const EdgeInsets.all(12),
                               child: Column(

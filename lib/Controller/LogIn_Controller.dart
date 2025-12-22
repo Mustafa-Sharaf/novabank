@@ -45,6 +45,7 @@ class LogInController extends GetxController {
       password: password,
       deviceToken: fcmToken,
     );
+    print("fcmToken----------------$fcmToken");
 
     try {
       final response = await HttpHelper.postRequest(

@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -6,6 +7,7 @@ import 'App_theme/Themem_Controller.dart';
 import 'Controller/CurrentUser_Controller.dart';
 import 'Controller/MyAccounts_Controller.dart';
 import 'Controller/Transfer_Controller.dart';
+import 'Notifications.dart';
 import 'View/CurrentUser_Screen.dart';
 import 'View/Home_Screen.dart';
 import 'View/LogIn_Screen.dart';
@@ -16,6 +18,8 @@ import 'language/Language_Controller.dart';
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
+  await Firebase.initializeApp();
+  await Notifications().initNotifications();
   Get.put(MyLanguageController());
   final themeController =Get.put(ThemeController());
   themeController.loadThemeFromStorage();

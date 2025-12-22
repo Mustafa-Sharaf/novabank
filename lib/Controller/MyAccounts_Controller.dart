@@ -26,7 +26,7 @@ class AccountsController extends GetxController {
     try {
       isLoading.value = true;
       final response = await http.get(
-        Uri.parse('http://novasys.runasp.net/api/Accounts/CurrentUserAccounts'),
+        Uri.parse('http://novasys.runasp.net/api/Accounts/UserAccounts'),
         headers: {
           'accept': '*/*',
           'Authorization': 'Bearer $token',

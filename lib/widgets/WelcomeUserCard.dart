@@ -54,7 +54,7 @@ class WelcomeUserCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Welcome 👋',
+              'Welcome'.tr,
               style: GoogleFonts.cairo(
                 fontSize: 16,
                 color: Colors.white70,
